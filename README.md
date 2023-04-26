@@ -1,8 +1,8 @@
-#Arctic-Blog
+# Arctic-Blog
 
 本仓库是博客系统的前端系统，页面主体基于`antd 4.24.2`+`react 18.2.0`完成搭建
 
-#项目功能介绍请看
+# 项目功能介绍请看[Arctic-Blog-backend](https://github.com/zsg4399/Arctic-blog-backend)
 
 ## 安装本地运行
 在安装前请确认系统是否安装node.js，yarn是基于node.js来进行包管理的
