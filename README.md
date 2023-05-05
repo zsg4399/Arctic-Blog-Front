@@ -2,7 +2,14 @@
 
 本仓库是博客系统的前端系统，页面主体基于`antd 4.24.2`+`react 18.2.0`完成搭建
 
-# 项目功能介绍请看[Arctic-Blog-backend](https://github.com/zsg4399/Arctic-blog-backend)
+## 技术介绍：
+* 基础框架React `18.2.0`
+* 状态管理:React-Redux `8.0.5`
+* 网络请求：axios `1.1.3`
+* UI框架：antd `4.24.2`
+* 富文本编辑器: braft-editor `2.3.9` (后续会考虑增加Markdown编辑，从而能支持Markdown编辑文章)
+* 样式框架: `scss`
+## 项目介绍请看[Arctic-Blog-backend](https://github.com/zsg4399/Arctic-blog-backend)
 
 ## 安装本地运行
 在安装前请确认系统是否安装node.js，yarn是基于node.js来进行包管理的
@@ -11,13 +18,14 @@
 `git clone https://github.com/zsg4399/Arctic-Blog-Front.git`
 
 然后cmd进入项目目录
-执行指令 `yarn` 安装完毕依赖后即可安装下述操作本地运行此项目了
+执行指令 `yarn` 
+等待依赖安装完成后即可安装下述操作本地运行此项目了
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 

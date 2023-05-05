@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import indexstyle from "./articleContent.module.scss";
 import { getArticleById } from "../../api/article";
 import { useSearchParams } from "react-router-dom";
-import { EyeFilled, StarFilled } from "@ant-design/icons";
+import { ClockCircleFilled, EyeFilled, StarFilled } from "@ant-design/icons";
 
 const ArticleContent = () => {
   const [article, setArticle] = useState({
@@ -14,12 +14,12 @@ const ArticleContent = () => {
     articleRaw: "",
     articleHtml: "",
     author: { id: "", username: "", avatar: "" },
-    createTime:'',
-    articleStars:0,
-    articleViews:0,
-    articleLikes:0,
-    tags:[{id:'',tagName:''}],
-    categorys:[{id:'',categoryName:''}]
+    createTime: "",
+    articleStars: 0,
+    articleViews: 0,
+    articleLikes: 0,
+    tags: [{ id: "", tagName: "" }],
+    categorys: [{ id: "", categoryName: "" }],
   });
   const [search] = useSearchParams();
   const articleId = search.get("articleId");
@@ -28,27 +28,30 @@ const ArticleContent = () => {
       .then((res) => {
         console.log(res);
         setArticle(res.data.data);
-        document.title(article.title)
+        document.title(article.title);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [articleId,article.title]);
+  }, [articleId, article.title]);
   return (
     <>
       <div className={indexstyle.articleContainer}>
         <Row className={indexstyle.titleContainer}>{article.title}</Row>
         <Row className={indexstyle.detailContainer}>
-          <Col span={3}>作者:{article.author.username}</Col>
+          <Col style={{ fontWeight: 600 }} span={3}>
+            作者:{article.author.username}
+          </Col>
           <Col offset={1} span={5}>
+            <ClockCircleFilled className={indexstyle.antIcon} />
             发布于{article.createTime.replace("T", " ")}
           </Col>
           <Col offset={1} span={2}>
-            <EyeFilled />
+            <EyeFilled className={indexstyle.antIcon} />
             {article.articleViews}
           </Col>
           <Col offset={1} span={2}>
-            <StarFilled />
+            <StarFilled className={indexstyle.antIcon} />
             {article.articleStars}
           </Col>
         </Row>
