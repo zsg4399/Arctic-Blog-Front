@@ -5,7 +5,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
 body,
 html,
 #root {
@@ -47,7 +57,72 @@ html,
 }
 .ant-radio-group {
   align-items: center;
-  display: flex
+  display: flex;
 }
 
+.antd-a-style {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.list-point {
+  width: 10px;
+  height: 10px;
+  background-color: aqua;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.my-border {
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(
+    130deg,
+    rgb(36, 198, 220) 15.56%,
+    rgb(84, 51, 255) 41.07%,
+    rgb(255, 0, 153) 76.05%
+  );
+  border-radius: 5px;
+}
+.my-tick {
+  color: red;
+  margin: 10px;
+  background-color: aqua;
+}
+.canClick:hover {
+  cursor: pointer;
+}
+
+.my-category {
+  display: inline-block;
+  color: #5094d5;
+  background-color: #ffffff;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #bebebe;
+
+}
+.my-tag {
+  display: inline-block;
+  color: #5094d5;
+  background-color: #ffffff;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #bebebe;
+}
+#root {
+  color: #bebebe;
+}
 @import "~antd/dist/antd.css";

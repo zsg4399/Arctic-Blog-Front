@@ -66,4 +66,11 @@ const ArticleStar = (articleId, userId, isStar) => {
     url: "/articles/isStar",
   });
 };
-export { getAllArticles, SendArticle, getArticleById, ArticleLike,ArticleStar };
+
+const getSwiper=()=>{
+  return request({
+    method:"GET",
+    url:"/articles/getSwiper"
+  })
+}
+export { getAllArticles, SendArticle, getArticleById, ArticleLike,ArticleStar,getSwiper };

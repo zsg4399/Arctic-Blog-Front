@@ -8,7 +8,7 @@ import AddArticle from "../pages/addarticle/AddArticle";
 import ArticleContent from "../components/articleContent/articleContent";
 import PersonCenter from "../pages/PersonCenter/PersonCenter";
 import MyDetail from "../pages/PersonCenter/component/MyDetail";
-
+import About from "../pages/about/About";
 
 
 //使用useRoutes注册路由必须在最外侧包裹一层hashroute或者browerroute
@@ -24,8 +24,7 @@ const AppRouter = () => {
       children: [
         {
           path: "profile",
-          element:<MyDetail/>,
-        
+          element: <MyDetail />,
         },
       ],
     },
@@ -52,6 +51,10 @@ const AppRouter = () => {
         {
           path: "article/detail",
           element: <ArticleContent />,
+        },
+        {
+          path: "about",
+          element: <About />,
         },
       ],
     },

@@ -45,6 +45,7 @@ function HeaderBar() {
       if (res.data.code === 200) {
         setLoginHide(true);
         setUserinfo(res.data.data) 
+        localStorage.setItem("user-basic-info",JSON.stringify(res.data.data))
       } 
     });
   }, []);
@@ -81,20 +82,22 @@ function HeaderBar() {
       </Col>
 
       <Col span={1} offset={13}>
-        <NavLink to={"/index/homepage"}>首页</NavLink>
+        <NavLink className={"antd-a-style"} to={"/index/homepage"}>首页</NavLink>
       </Col>
-      <Col span={1}>关于</Col>
+      <Col span={1}>
+        <NavLink className={"antd-a-style"} to={"/index/about"}>关于</NavLink>
+      </Col>
       <Col span={3}>
         <Search placeholder="站内搜索" onSearch={Search} enterButton />
       </Col>
       {!loginHide && (
         <Col offset={1} span={1}>
-          <NavLink to={"/index/login"}>登录</NavLink>
+          <NavLink className={"antd-a-style"} to={"/index/login"}>登录</NavLink>
         </Col>
       )}
       {!loginHide && (
         <Col span={2}>
-          <NavLink to={"/index/register"}>注册</NavLink>
+          <NavLink className={"antd-a-style"} to={"/index/register"}>注册</NavLink>
         </Col>
       )}
       {loginHide && (

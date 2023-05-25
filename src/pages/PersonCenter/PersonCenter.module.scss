@@ -2,13 +2,14 @@
   width: 100%;
 }
 .headContainer {
-  height: 56px;
+  min-height: 72px;
   padding-left: 25px;
   padding-right: 10px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background: linear-gradient(130deg, rgb(36, 198, 220), rgb(84, 51, 255) 41.07%, rgb(255, 0, 153) 76.05%);
+  color-scheme: light;
 }
 
 .mainContainer {

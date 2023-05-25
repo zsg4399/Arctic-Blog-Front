@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import indexStyle from "../pages/index/index.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import { Navigation, Autoplay, Pagination as Pagination1 } from "swiper";
 import { Col, Image, Row, Tabs } from "antd";
-import { getAllArticles } from "../api/article";
+import { getAllArticles, getSwiper } from "../api/article";
 import { Pagination } from "antd";
 import { showDateTime } from "../utils/DatetimeUtils";
 import {
@@ -12,11 +12,15 @@ import {
   LikeFilled,
   MessageOutlined,
 } from "@ant-design/icons";
+import PersonCard from "./personCard/PersonCard";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
 
 const items = [
   {
     key: "hot",
-    label: "热门",
+    label: "最热",
   },
   {
     key: "newest",
@@ -27,15 +31,16 @@ const items = [
 //渲染分页组件前进退回按键
 const itemRender = (_, type, originalElement) => {
   if (type === "prev") {
-    return <a>上一页</a>;
+    return <span>上一页</span>;
   }
   if (type === "next") {
-    return <a>下一页</a>;
+    return <span>下一页</span>;
   }
   return originalElement;
 };
 
 function HomePage() {
+  const [pictures, setPictures] = useState([]);
   const [Articles, setArticles] = useState([
     {
       id: "",
@@ -67,7 +72,6 @@ function HomePage() {
 
   useEffect(() => {
     getAllArticles(page, pageSize, "createTime").then((res) => {
-      console.log(res);
       const data = res.data.data;
       setTotal(data.total);
       const articleList = data.records.map((record) => {
@@ -76,9 +80,20 @@ function HomePage() {
 
         return record;
       });
+
       setArticles(articleList);
     });
   }, [page, pageSize]);
+
+  useEffect(() => {
+    getSwiper()
+      .then((res) => {
+        setPictures(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className={indexStyle.HomePageContainer}>
@@ -86,12 +101,15 @@ function HomePage() {
         <Swiper
           spaceBetween={50}
           className={indexStyle.swipper}
-          modules={{ Navigation, Autoplay, Pagination }}
+          modules={[Navigation, Autoplay, Pagination1]}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
         >
-          <SwiperSlide>111</SwiperSlide>
-          <SwiperSlide>222</SwiperSlide>
-          <SwiperSlide>333</SwiperSlide>
-          <SwiperSlide>444</SwiperSlide>
+          {pictures.map((item)=>{
+            return <SwiperSlide key={item.id}>
+              <img style={{width:"100%"}} src={`${item.imageUrl}`} alt=""/>
+            </SwiperSlide>
+          })}
         </Swiper>
         <Tabs
           onTabClick={switchSort}
@@ -145,7 +163,6 @@ function HomePage() {
                         onClick={(e) => {
                           let isLike = e.currentTarget.getAttribute("islike");
 
-                          
                           if (isLike === "false") {
                             e.currentTarget.classList.add(
                               `${indexStyle.highlightLike}`
@@ -194,9 +211,12 @@ function HomePage() {
           showQuickJumper
           onChange={changePage}
           itemRender={itemRender}
+          className={indexStyle.paginationStyle}
         />
       </div>
-      <div></div>
+      <div className={indexStyle.rightContainer}>
+        <PersonCard />
+      </div>
     </div>
   );
 }

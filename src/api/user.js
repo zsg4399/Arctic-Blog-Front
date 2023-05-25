@@ -26,4 +26,11 @@ const editUserinfo = (field, value) => {
     },
   });
 };
-export { getUserInfo, loginout, editUserinfo };
+
+const getAuthorInfo=()=>{
+  return request({
+    method:"GET",
+    url:"/users/AuthorInfo"
+  })
+}
+export { getUserInfo, loginout, editUserinfo,getAuthorInfo };
