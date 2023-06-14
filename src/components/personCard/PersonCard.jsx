@@ -25,7 +25,7 @@ const PersonCard = () => {
             xl: 120,
             xxl: 140,
           }}
-          src="/avatar/profilephoto.jpg"
+          src="/static/avatar/profilephoto.jpg"
           alt="北极风"
           draggable={true}
         />

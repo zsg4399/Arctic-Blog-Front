@@ -125,4 +125,27 @@ html,
 #root {
   color: #bebebe;
 }
+
+.article-title{
+  color:#222226;
+  font-size: 28px;
+  font-weight: 600;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.article-content{
+  color: #4d4d4d;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  
+}
+.neccessary::before{
+  position: absolute;
+    content: "*";
+    left: -16px;
+    color: #fc5531;
+    font-size: 20px;
+}
 @import "~antd/dist/antd.css";

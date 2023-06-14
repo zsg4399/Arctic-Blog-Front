@@ -65,29 +65,35 @@ function HomePage() {
   const switchSort = (e) => {
     console.log(e);
   };
+  //改变当前页数和每页显示的条数
   const changePage = (page, pageSize) => {
     setPage(page);
     setPageSize(pageSize);
+  
   };
+  
+  //获取首页文章
+  const getHomeArticle=(page,pageSize,order)=>{
+    getAllArticles(page,pageSize,order,1).then((res) => {
+      const data = res.data.data;
+      setTotal(data.total);
+      const articleList = data.records.map((record) => {
+        const CT = record.createTime;
+        record.createTime = showDateTime(CT);
 
-  useEffect(() => {
-    getAllArticles(page, pageSize, "createTime")
-      .then((res) => {
-        const data = res.data.data;
-        setTotal(data.total);
-        const articleList = data.records.map((record) => {
-          const CT = record.createTime;
-          record.createTime = showDateTime(CT);
-
-          return record;
-        });
-
-        setArticles(articleList);
-      })
-      .catch((err) => {
-        message.error(err);
+        return record;
       });
-  }, [page, pageSize]);
+
+      setArticles(articleList);
+    })
+    .catch((err) => {
+      message.error(err);
+    });
+  }
+  useEffect(() => {
+    getHomeArticle(page,pageSize,"createTime")
+      
+  }, [page,pageSize]);
 
   useEffect(() => {
     getSwiper()

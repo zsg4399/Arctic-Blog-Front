@@ -1,10 +1,11 @@
+import { message } from "antd";
 import axios from "axios";
 
 const baseUrl=process.env.REACT_APP_BASE_URL
 //创建axios实例
 const request = axios.create({
   baseURL: baseUrl,
-  timeout: 10000,
+  timeout: 30000,
   headers: {
     "Content-Type": "Application/json;charset=utf-8",
   },
@@ -25,7 +26,13 @@ request.interceptors.request.use(
 //统一配置响应拦截器
 request.interceptors.response.use(
   (res) => {
-    console.log(res);
+    if(!!res.data){
+      //判断请求是否需要跳转到用户登录界面
+      if(res.data.code===208&&res.config.url!=="/users/getAvatar"){
+        message.info("请先登录")
+        window.location.href="/index/login"
+      }
+    }
     return res;
   },
   (err) => {

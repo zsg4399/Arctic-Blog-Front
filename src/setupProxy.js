@@ -7,13 +7,7 @@ module.exports = function (app) {
     createProxyMiddleware("/api1", {
       target: "http://localhost:8001",
       changeOrigin: true,
-      pathRewrite: { api: "" },
+      pathRewrite: { api1: "" },
     }),
-    createProxyMiddleware("/smms", {
-      target: "https://smms.app/api/v2/",
-      changeOrigin: true,
-      pathRewrite: { smms: "" },
-      secure:true
-    })
   );
 };
