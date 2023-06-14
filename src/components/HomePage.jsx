@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import indexStyle from "../pages/index/index.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination as Pagination1 } from "swiper";
-import { Col, Image, Row, Tabs } from "antd";
+import { Col, Image, Row, Tabs, message } from "antd";
 import { getAllArticles, getSwiper } from "../api/article";
 import { Pagination } from "antd";
 import { showDateTime } from "../utils/DatetimeUtils";
@@ -40,7 +40,7 @@ const itemRender = (_, type, originalElement) => {
 };
 
 function HomePage() {
-  const [pictures, setPictures] = useState([]);
+  const [pictures, setPictures] = useState([{ id: -1, imageUrl: "" }]);
   const [Articles, setArticles] = useState([
     {
       id: "",
@@ -57,7 +57,7 @@ function HomePage() {
   ]); //定义文章列表state
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-  const [total, setTotal] = useState(500);
+  const [total, setTotal] = useState(0);
   const articleBaseUrl = "/index/article/detail";
   const openArticle = (id) => {
     window.open(`${articleBaseUrl}?articleId=${id}`);
@@ -71,18 +71,22 @@ function HomePage() {
   };
 
   useEffect(() => {
-    getAllArticles(page, pageSize, "createTime").then((res) => {
-      const data = res.data.data;
-      setTotal(data.total);
-      const articleList = data.records.map((record) => {
-        const CT = record.createTime;
-        record.createTime = showDateTime(CT);
+    getAllArticles(page, pageSize, "createTime")
+      .then((res) => {
+        const data = res.data.data;
+        setTotal(data.total);
+        const articleList = data.records.map((record) => {
+          const CT = record.createTime;
+          record.createTime = showDateTime(CT);
 
-        return record;
+          return record;
+        });
+
+        setArticles(articleList);
+      })
+      .catch((err) => {
+        message.error(err);
       });
-
-      setArticles(articleList);
-    });
   }, [page, pageSize]);
 
   useEffect(() => {
@@ -90,9 +94,7 @@ function HomePage() {
       .then((res) => {
         setPictures(res.data.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   }, []);
 
   return (
@@ -105,11 +107,27 @@ function HomePage() {
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
         >
-          {pictures.map((item)=>{
-            return <SwiperSlide key={item.id}>
-              <img style={{width:"100%"}} src={`${item.imageUrl}`} alt=""/>
+          {pictures !== null && typeof pictures !== "undefined" ? (
+            pictures.map((item) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <img
+                    style={{ width: "100%" }}
+                    src={`${item.imageUrl}`}
+                    alt=""
+                  />
+                </SwiperSlide>
+              );
+            })
+          ) : (
+            <SwiperSlide key={"-1"}>
+              <img
+                style={{ width: "100%" }}
+                src={`https://s2.loli.net/2023/05/26/FOXWDuqm2hcN86U.png`}
+                alt=""
+              />
             </SwiperSlide>
-          })}
+          )}
         </Swiper>
         <Tabs
           onTabClick={switchSort}

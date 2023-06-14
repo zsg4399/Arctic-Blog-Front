@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import indexStyle from "../pages/index/index.module.scss";
-import { Input, Col, Avatar, Button, Popover, Menu } from "antd";
+import { Input, Col, Avatar, Button, Popover, Menu, message } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   BookOutlined,
@@ -47,6 +47,8 @@ function HeaderBar() {
         setUserinfo(res.data.data) 
         localStorage.setItem("user-basic-info",JSON.stringify(res.data.data))
       } 
+    }).catch(err=>{
+      message.warn(err)
     });
   }, []);
 

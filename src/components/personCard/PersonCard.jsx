@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import cardStyle from "./PersonCard.module.scss";
-import { Avatar } from "antd";
+import { Avatar, message } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 import {getAuthorInfo} from '../../api/user'
 
@@ -9,6 +9,8 @@ const PersonCard = () => {
   useEffect(()=>{
     getAuthorInfo().then(res=>{
       setAuthorInfo(res.data.data)
+    }).catch(err=>{
+      return
     })
   },[])
   return (
