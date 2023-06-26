@@ -4,33 +4,34 @@ import { Input, Form, Button, message } from "antd";
 import { userLogin } from "../api/login";
 import { Navigate, useNavigate } from "react-router-dom";
 
-
 function Login() {
   const navigate = useNavigate();
   const Login = (values) => {
     const { username, password } = values;
     userLogin(username, password).then((res) => {
-      localStorage.setItem("token",res.data.data.access_token)
-      localStorage.setItem("userinfo",JSON.stringify(res.data.data.userinfo))
+      localStorage.setItem("token", res.data.data.access_token);
+      localStorage.setItem("userinfo", JSON.stringify(res.data.data.userinfo));
       navigate("/index/homepage");
       window.location.reload();
     });
   };
-  if(!localStorage.getItem("token")){
+  if (!localStorage.getItem("token")) {
     return (
       <div className={indexStyle.loginCard}>
         <div className={indexStyle.cardHeader}>
           <p className={indexStyle.headerfont}>登录</p>
-          <hr className={indexStyle.hrStyle} />
+          <div className={`${indexStyle.borderStyle}`}/>
         </div>
         <div className={indexStyle.cardMain}>
           <Form
             name="basic"
             labelCol={{
-              span: 6,
+              sm: 6,
+              md: 6,
             }}
             wrapperCol={{
-              span: 16,
+              sm: 18,
+              md: 18,
             }}
             initialValues={{
               remember: true,
@@ -55,7 +56,7 @@ function Login() {
             >
               <Input placeholder="请输入用户名/邮箱" />
             </Form.Item>
-  
+
             <Form.Item
               label="密码"
               name="password"
@@ -69,15 +70,14 @@ function Login() {
             >
               <Input.Password placeholder="请输入密码" />
             </Form.Item>
-  
+
             <Form.Item
               wrapperCol={{
-                span: 16,
-                offset: 6,
+                sm: { span: 16, offset: 6 },
               }}
             >
               <Button
-                style={{ marginLeft: 240 }}
+                className={indexStyle.submitButton}
                 type="primary"
                 htmlType="submit"
               >
@@ -89,9 +89,9 @@ function Login() {
       </div>
     );
   }
-  
-  message.info("您已经登录，请勿重复登录")
-  return <Navigate to="/index/homepage"/>
+
+  message.info("您已经登录，请勿重复登录");
+  return <Navigate to="/index/homepage" />;
 }
 
 export default Login;

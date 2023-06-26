@@ -27,7 +27,7 @@ function HeaderBar() {
           localStorage.removeItem("token");
           localStorage.removeItem("userinfo");
           setLoginHide(false);
-          message.success("退出登录成功")
+          message.success("退出登录成功");
         }
       }
     });
@@ -88,37 +88,43 @@ function HeaderBar() {
   );
 
   const content = <Menu items={menuitems} onClick={switchMenuItem}></Menu>; //下拉框content部分
-
+  //xxl px>=1600 xl px >=1200 lg px>=992px md>=768px sm >=568px xs<568px
   return (
     <>
-      <Col span={2}>
+      <Col xl={3} lg={4} md={5} sm={6} xs={4}>
         <NavLink className={indexStyle.navlinknone} to="/">
           <strong>React-Blog</strong>
         </NavLink>
       </Col>
 
-      <Col span={1} offset={13}>
+      <Col
+        xl={{ offset: 11, span: 1 }}
+        lg={{ offset: 8, span: 2 }}
+        md={{ offset: 5, span: 2 }}
+        sm={{ offset: 1, span: 2 }}
+        xs={{offset:1,span:3}}
+      >
         <NavLink className={"antd-a-style"} to={"/index/homepage"}>
           首页
         </NavLink>
       </Col>
-      <Col span={1}>
+      <Col xl={1} lg={2} md={2} sm={2} xs={3}>
         <NavLink className={"antd-a-style"} to={"/index/about"}>
           关于
         </NavLink>
       </Col>
-      <Col span={3}>
+      <Col xl={3} lg={3} md={5} sm={6} xs={6}>
         <Search placeholder="站内搜索" onSearch={Search} enterButton />
       </Col>
       {!loginHide && (
-        <Col offset={1} span={1}>
+        <Col offset={1} xl={1} lg={2} md={2} sm={2} xs={3}>
           <NavLink className={"antd-a-style"} to={"/index/login"}>
             登录
           </NavLink>
         </Col>
       )}
       {!loginHide && (
-        <Col span={2}>
+        <Col xl={2} lg={2} md={2} sm={2} xs={3}>
           <NavLink className={"antd-a-style"} to={"/index/register"}>
             注册
           </NavLink>
@@ -131,10 +137,14 @@ function HeaderBar() {
           content={content}
           placement="bottom"
         >
-          <Col offset={1} span={1}>
+          <Col offset={1} xl={1} lg={1} md={1} sm={1} xs={2}>
             <Avatar
               src={`/static/avatar/${userinfo.avatar}`}
-              size="large"
+              size={{xs: 24,
+                sm: 30,
+                md: 36,
+                lg: 42,
+                xl: 48,}}
               shape="circle"
               icon={<UserOutlined />}
             />
@@ -142,11 +152,12 @@ function HeaderBar() {
         </Popover>
       )}
       {loginHide && (
-        <Col span={2}>
+        <Col xl={3} lg={3} md={3} sm={4} xs={4}>
           <Button
             onClick={addArticle}
             shape="round"
             danger="true"
+            className={indexStyle.EditorButton}
             icon={<EditOutlined />}
           >
             写文章

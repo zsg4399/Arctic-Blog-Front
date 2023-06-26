@@ -78,6 +78,7 @@ html,
 .my-border {
   width: 80%;
   height: 5px;
+  margin: 0 auto;
   background: linear-gradient(
     130deg,
     rgb(36, 198, 220) 15.56%,
@@ -147,5 +148,11 @@ html,
     left: -16px;
     color: #fc5531;
     font-size: 20px;
+}
+
+@media screen and (max-width: 568px) {
+  .antd-a-style{
+    font-size: 12px
+  }
 }
 @import "~antd/dist/antd.css";

@@ -69,31 +69,30 @@ function HomePage() {
   const changePage = (page, pageSize) => {
     setPage(page);
     setPageSize(pageSize);
-  
   };
-  
+
   //获取首页文章
-  const getHomeArticle=(page,pageSize,order)=>{
-    getAllArticles(page,pageSize,order,1).then((res) => {
-      const data = res.data.data;
-      setTotal(data.total);
-      const articleList = data.records.map((record) => {
-        const CT = record.createTime;
-        record.createTime = showDateTime(CT);
+  const getHomeArticle = (page, pageSize, order) => {
+    getAllArticles(page, pageSize, order, 1)
+      .then((res) => {
+        const data = res.data.data;
+        setTotal(data.total);
+        const articleList = data.records.map((record) => {
+          const CT = record.createTime;
+          record.createTime = showDateTime(CT);
 
-        return record;
+          return record;
+        });
+
+        setArticles(articleList);
+      })
+      .catch((err) => {
+        message.error(err);
       });
-
-      setArticles(articleList);
-    })
-    .catch((err) => {
-      message.error(err);
-    });
-  }
+  };
   useEffect(() => {
-    getHomeArticle(page,pageSize,"createTime")
-      
-  }, [page,pageSize]);
+    getHomeArticle(page, pageSize, "createTime");
+  }, [page, pageSize]);
 
   useEffect(() => {
     getSwiper()
@@ -159,9 +158,7 @@ function HomePage() {
                       span={18}
                       className={indexStyle.articleTitle}
                     >
-                      <div className={indexStyle.titleContainer}>
-                        {item.title}
-                      </div>
+                      {item.title}
                     </Col>
                     <Col span={2} offset={1}>
                       <EyeOutlined className={indexStyle.logoAndFont} />

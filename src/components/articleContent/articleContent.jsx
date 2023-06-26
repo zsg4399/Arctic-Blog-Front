@@ -79,16 +79,18 @@ const ArticleContent = () => {
             <StarFilled className={indexstyle.antIcon} />
             {article.articleStars}
           </Col>
-          <Col className={indexstyle.line2Col}>
-            <span>分类专栏:</span>
-            {article.categorys.map((category) => {
-              return (
-                <span className="my-category" key={category.id}>
-                  {category.categoryName}
-                </span>
-              );
-            })}
-          </Col>
+          {!!article.categorys && (
+            <Col className={indexstyle.line2Col}>
+              <span>分类专栏:</span>
+              {article.categorys.map((category) => {
+                return (
+                  <span className="my-category" key={category.id}>
+                    {category.categoryName}
+                  </span>
+                );
+              })}
+            </Col>
+          )}
           <Col className={indexstyle.line2Col}>
             <span>文章标签:</span>
             {article.tags.map((tag) => {
@@ -102,7 +104,9 @@ const ArticleContent = () => {
         </Row>
         <Row
           className={`${indexstyle.contentContainer} braft-output-content`}
-          dangerouslySetInnerHTML={{ __html: BraftEditor.createEditorState(article.articleRaw).toHTML() }}
+          dangerouslySetInnerHTML={{
+            __html: BraftEditor.createEditorState(article.articleRaw).toHTML(),
+          }}
         ></Row>
         <Row className={indexstyle.extraContainer}></Row>
       </div>
