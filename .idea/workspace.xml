@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="befaa9ca-6ea3-42c4-a964-9dcfd51b6f49" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/api/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/reuqest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reuqest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeaderBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/articleContent/articleContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/articleContent/articleContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/articleContent/articleContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/articleContent/articleContent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/braftComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/braftComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/comment/MyComment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comment/MyComment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/comment/MyComment.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comment/MyComment.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/markdownEditor/comback.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/markdownEditor/comback.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/personCard/PersonCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/personCard/PersonCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/verifycode/verifycodeSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/verifycode/verifycodeSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PersonCenter/PersonCenter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PersonCenter/PersonCenter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PersonCenter/component/MyDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PersonCenter/component/MyDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/addarticle/AddArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/addarticle/AddArticle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2R3ju9WTqITziYZaX9aUDTkzOmF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\React-project\Arctic-Blog-Front\public\static" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="befaa9ca-6ea3-42c4-a964-9dcfd51b6f49" name="Changes" comment="" />
+      <created>1686485882316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686485882316</updated>
+      <workItem from="1686485886419" duration="1259000" />
+      <workItem from="1686487176954" duration="8000" />
+      <workItem from="1708752705134" duration="337000" />
+      <workItem from="1708753113448" duration="1139000" />
+      <workItem from="1708755509068" duration="1567000" />
+      <workItem from="1708758956597" duration="3245000" />
+      <workItem from="1708784209018" duration="2236000" />
+      <workItem from="1708878924184" duration="626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
